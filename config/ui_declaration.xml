@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<main>
+    <app_title>Calculator</app_title>
+    <exceptions>
+        <wrong_expression_syntax>Error in syntax!</wrong_expression_syntax>
+        <intrenal_program_error>Error in program code!</intrenal_program_error>
+        <division_by_zero>Division by zero is not allowed!</division_by_zero>
+    </exceptions>
+</main>

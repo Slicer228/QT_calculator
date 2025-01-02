@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<main>
+    <window_height>800</window_height>
+    <window_width>600</window_width>
+    <pagination_history_limit>10</pagination_history_limit>
+</main>

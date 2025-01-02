@@ -1,0 +1,4 @@
+pyside6
+beautifulsoup4
+pydantic
+lxml
