@@ -1,0 +1,4 @@
+
+
+class InputSyntaxError(Exception):
+    ...

@@ -22,6 +22,7 @@ class Connection(sqlite3.Connection):
         )
         """
         self.cursor.execute(query)
+        self.commit()
 
     def get_operations_history(self) -> object | list[object]:
         fetches = 0

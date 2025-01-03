@@ -1,6 +1,5 @@
-from pydantic import BaseModel, field_validator, computed_field
-from typing import Any, List, Union
-
+from pydantic import BaseModel, field_validator
+from typing import Any, Callable, List, Union, Self, Optional, Tuple
 
 
 class OperationPageSchema(BaseModel):
@@ -13,7 +12,28 @@ class OperationPageSchema(BaseModel):
         return int(value)
 
 
-class GroupOperationsSchema(BaseModel):
-    pass
+class InternalOperationSchema(BaseModel):
+    perfomance: str
+    executable: Callable
+    priority: int
+
+
+class OperationSchema(BaseModel):
+    operation: Any
+    value: float | int
+
+
+class GroupOperationSchema(BaseModel):
+    operation: Any
+    group: List
+
+
+class ExpressionSchema(BaseModel):
+    current_result: float | int | None
+    prev_result: float | int | None
+    prev_expression: GroupOperationSchema
+    current_expression: GroupOperationSchema
+
+
 
 

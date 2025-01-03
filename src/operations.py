@@ -1,5 +1,5 @@
 from enum import Enum
-
+from src.schemas import InternalOperationSchema
 
 def add(a, b):
     return a + b
@@ -14,17 +14,22 @@ def subtract(a, b):
 
 
 def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+    f = 1
+    for i in range(1,n+1):
+        f *= i
+    return f
+
+
+def multiply(a, b):
+    return a * b
 
 
 class Operations(Enum):
-    ADD = add
-    DIVIDE = divide
-    SUBTRACT = subtract
+    MULTIPLY = InternalOperationSchema(executable=multiply, priority=3, perfomance='*')
+    ADD = InternalOperationSchema(executable=add, priority=4, perfomance='+')
+    DIVIDE = InternalOperationSchema(executable=divide, priority=2, perfomance='/')
+    SUBTRACT = InternalOperationSchema(executable=subtract, priority=5, perfomance='-')
 
 
 class SoloOperations(Enum):
-    FACTORIAL = factorial
+    FACTORIAL = InternalOperationSchema(executable=factorial, priority=1, perfomance='!')
