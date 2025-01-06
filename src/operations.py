@@ -15,13 +15,17 @@ def subtract(a, b):
 
 def factorial(n):
     f = 1
-    for i in range(1,n+1):
+    for i in range(1,int(n)+1):
         f *= i
     return f
 
 
 def multiply(a, b):
     return a * b
+
+
+def foo():
+    pass
 
 
 class Operations(Enum):
@@ -33,3 +37,4 @@ class Operations(Enum):
 
 class SoloOperations(Enum):
     FACTORIAL = InternalOperationSchema(executable=factorial, priority=1, perfomance='!')
+    NO_OPERATION = InternalOperationSchema(executable=foo, priority=0, perfomance='')

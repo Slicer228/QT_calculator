@@ -7,5 +7,5 @@ sheet = {
     '!': SoloOperations.FACTORIAL.value,
     '/': Operations.DIVIDE.value,
     '*': Operations.MULTIPLY.value,
-    None: None
+    'empty': SoloOperations.NO_OPERATION.value
 }
