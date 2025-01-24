@@ -1,6 +1,7 @@
 from enum import Enum
 from src.schemas import InternalOperationSchema
 
+
 def add(a, b):
     return a + b
 
