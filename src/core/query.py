@@ -53,7 +53,7 @@ class CalculatorQueryHandler:
             value=value
         ))
 
-    def _delete_last_chosen_element(self):
+    def delete_last_chosen_element(self):
         if self._queue:
             if len(self._current_group) == 0:
                 self._groups_deep_len -= 1
@@ -95,6 +95,7 @@ class CalculatorQueryHandler:
     def _print_queue(self):
         self._print_group(self._queue)
 
+    @staticmethod
     def _convert_group_to_operation(self, group, result):
         return SingleOperationSchema(
             operation=group.operation,

@@ -9,6 +9,8 @@ class Calculator(CalculatorExpressionHandler):
     def get_result(self):
         self._current_calculation = self._queue
         priority = 1
+        if len(self._queue) == 0:
+            return 0
         while len(self._queue) > 1 or self._queue[0].operation.priority != 0:
             for _index, _i in enumerate(self._current_calculation):
                 if len(self._current_calculation) == 1:
@@ -35,8 +37,7 @@ class Calculator(CalculatorExpressionHandler):
                         break
         return self._queue[0].value if isinstance(self._queue[0], SingleOperationSchema) else 0
 
-
-    def _calculate_operation(self,index):
+    def _calculate_operation(self, index):
         if isinstance(self._current_calculation[index].operation, tuple):
             self._current_calculation[index].value = self._current_calculation[index].operation[1].executable(
                 self._current_calculation[index].value
